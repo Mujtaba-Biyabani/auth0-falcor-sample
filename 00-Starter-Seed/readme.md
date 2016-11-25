@@ -6,7 +6,7 @@ This seed project demonstrates how to set up Auth0 with a Falcor API. If you wan
 
 Run `npm install` to ensure local dependencies are available.
 
-Set the **client ID** and **client secret** for your Auth0 app as enviroment variables with the following names respectively: `AUTH0_CLIENT_SECRET` and `AUTH0_CLIENT_ID`.
+Rename the `.env.example` file to `.env` and set the **client ID** and **client secret** for your Auth0 app.
 
 ```bash
 # .env file
