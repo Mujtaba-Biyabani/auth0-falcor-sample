@@ -81,5 +81,5 @@ app.use('/api/model.json', checkJwt, checkScopes, falcorExpress.dataSourceRoute(
   ]);
 }));
 
-app.listen(3001);
-console.log("Listening on http://localhost:3001");
+app.listen(3010);
+console.log("Listening on http://localhost:3010");
