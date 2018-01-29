@@ -8,8 +8,6 @@ Rename the `.env.example` file to `.env`. This file has two values, `AUTH0_AUDIE
 
 ## Run the Application
 
-The development server that comes with create-react-app can be used to serve the application.
-
 ```bash
 npm start
 ```

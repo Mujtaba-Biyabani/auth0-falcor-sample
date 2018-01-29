@@ -36,50 +36,37 @@ const checkJwt = jwt({
 
 const checkScopes = jwtAuthz([ 'read:messages' ]);
 
-var data = [
-  {
-    "name": "AngularJS",
-    "language": "JavaScript"
-  },
-  {
-    "name": "NodeJS",
-    "language": "JavaScript"
-  },
-  {
-    "name": "Laravel",
-    "language": "PHP"
-  }
-];
-
-app.use('/api/model.json', checkJwt, checkScopes, falcorExpress.dataSourceRoute(function(req, res) {
+app.use('/api/public/model.json', falcorExpress.dataSourceRoute(function(req, res) {
   return new Router([
     {
-      route: "frameworks[{integers:frameworkIds}]['name', 'language']",
+      route: 'public.message',
       get: function(pathSet) {
-        var results = [];
-
-        pathSet.frameworkIds.forEach(function(frameworkId) {
-
-          // An array of key names that map is held at pathSet[2]
-          pathSet[2].map(function(key) {
-
-            // Find the framework that corresponds to the current frameworkId
-            var frameworkRecord = data[frameworkId];
-
-            // Finally we push a path/value object onto
-            // the results array
-            results.push({
-              path: ['frameworks', frameworkId, key], 
-              value: frameworkRecord[key]
-            });
-          });          
-        });
-
-        return results;
+        return { path:['public', 'message'], value: 'Hello from a public endpoint! You don\'t need to be authenticated to see this.' };
       }
     }
   ]);
 }));
 
-app.listen(3010);
-console.log("Listening on http://localhost:3010");
+app.use('/api/private/model.json', checkJwt, falcorExpress.dataSourceRoute(function(req, res) {
+  return new Router([
+    {
+      route: "private.message",
+      get: function(pathSet) {
+        return { path:['private', 'message'], value: 'Hello from a private endpoint! You need to be authenticated to see this.' };
+      }
+    }
+  ]);
+}));
+
+app.use('/api/private-scoped/model.json', checkJwt, checkScopes, falcorExpress.dataSourceRoute(function(req, res) {
+  return new Router([
+    {
+      route: 'private_scoped.message',
+      get: function(pathSet) {
+        return { path:['private_scoped', 'message'], value: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.' };
+      }
+    }
+  ]);
+}));
+
+app.listen(3000);
