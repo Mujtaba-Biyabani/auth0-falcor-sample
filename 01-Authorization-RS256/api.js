@@ -9,13 +9,18 @@ const HttpDataSource = require('falcor-http-datasource');
 
 require('dotenv').config();
 
-const serverURL = 'http://localhost:3000';
+const serverURL = 'http://localhost:3001';
 
 if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
   throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file'
 }
 
-app.use(cors());
+const whitelist = 'http://localhost:3000';
+const corsOption =  {
+  origin: whitelist
+};
+
+app.use(cors(corsOption));
 
 const checkJwt = jwt({
   // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
@@ -69,14 +74,14 @@ app.get('/api/private-scoped', checkJwt, async function(req, res) {
           headers: { 'Authorization': 'Bearer ' + token }
         })
     });
-  
+
   try {
     const message = await model.getValue(['private_scoped', 'message']);
 
     res.json({ message: message });
   } catch(err) {
     res.status(403).json(err[0].value);
-  } 
+  }
 });
 
 app.listen(3010);
