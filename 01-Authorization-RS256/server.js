@@ -69,4 +69,4 @@ app.use('/api/private-scoped/model.json', checkJwt, checkScopes, falcorExpress.d
   ]);
 }));
 
-app.listen(3000);
+app.listen(3001);
