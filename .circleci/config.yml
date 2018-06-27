@@ -13,6 +13,7 @@ jobs:
           command: |
               echo "AUTH0_DOMAIN=$auth0_domain" >> .env
               echo "AUTH0_AUDIENCE=$api_identifier" >> .env
+              head .env
  
       - run: 
            name: background server
@@ -34,16 +35,16 @@ jobs:
           name: Prepare environment variables for test
           command: |
             cd test
-            echo "AUTH0_DOMAIN=$auth0_domain" >> .env
-            echo "AUTH0_AUDIENCE=$api_identifier" >> .env
-            echo "AUTH0_CLIENT_ID_1=$client_id_scopes_none" >> .env
-            echo "AUTH0_CLIENT_SECRET_1=$client_secret_scopes_none" >> .env
-            echo "AUTH0_CLIENT_ID_2=$client_id_scopes_read" >> .env
-            echo "AUTH0_CLIENT_SECRET_2=$client_secret_scopes_read" >> .env
-            echo "AUTH0_CLIENT_ID_3=$client_id_scopes_write" >> .env
-            echo "AUTH0_CLIENT_SECRET_3=$client_secret_scopes_write" >> .env
-            echo "AUTH0_CLIENT_ID_4=$client_id_scopes_readwrite" >> .env
-            echo "AUTH0_CLIENT_SECRET_4=$client_secret_scopes_readwrite" >> .env
+            echo "AUTH0_DOMAIN=$AUTH0_TEST_DOMAIN" >> .env
+            echo "AUTH0_AUDIENCE=$AUTH0_TEST_AUDIENCE" >> .env
+            echo "AUTH0_CLIENT_ID_1=$AUTH0_TEST_CLIENT_ID1" >> .env
+            echo "AUTH0_CLIENT_SECRET_1=$AUTH0_TEST_CLIENT_SECRET1" >> .env
+            echo "AUTH0_CLIENT_ID_2=$AUTH0_TEST_CLIENT_ID2" >> .env
+            echo "AUTH0_CLIENT_SECRET_2=$AUTH0_TEST_CLIENT_SECRET2" >> .env
+            echo "AUTH0_CLIENT_ID_3=$AUTH0_TEST_CLIENT_ID3" >> .env
+            echo "AUTH0_CLIENT_SECRET_3=$AUTH0_TEST_CLIENT_SECRET3" >> .env
+            echo "AUTH0_CLIENT_ID_4=$AUTH0_TEST_CLIENT_ID4" >> .env
+            echo "AUTH0_CLIENT_SECRET_4=$AUTH0_TEST_CLIENT_SECRET4" >> .env
             echo "API_URL=http://localhost:3010" >> .env
 
       - run:
