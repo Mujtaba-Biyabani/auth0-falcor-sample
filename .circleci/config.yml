@@ -14,6 +14,8 @@ jobs:
               echo "AUTH0_DOMAIN=$auth0_domain" >> .env
               echo "AUTH0_AUDIENCE=$api_identifier" >> .env
               head .env
+
+      - run: ls
  
       - run: 
            name: background server
