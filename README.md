@@ -2,6 +2,7 @@
 
 These samples demonstrate how to add authentication to a Falcor app with Auth0.
 
+
 ## What is Auth0?
 
 Auth0 helps you to:
