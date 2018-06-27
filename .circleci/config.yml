@@ -17,9 +17,7 @@ jobs:
  
       - run: 
            name: background server
-           command: |
-           ls
-           sh exec.sh
+           command: ls sh exec.sh
            background: true
            
       - run:
