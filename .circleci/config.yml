@@ -12,8 +12,8 @@ jobs:
           name: Set .env file
           command: |
               mv .env.example .env
-              echo "AUTH0_DOMAIN=$auth0_domain" >> .env
-              echo "AUTH0_AUDIENCE=$api_identifier" >> .env
+              sed -i "s/{DOMAIN}/$AUTH0_TEST_DOMAIN/g" .env
+              sed -i "s/{AUTH0_AUDIENCE}/$AUTH0_TEST_AUDIENCE/g" .env    
               head .env
 
       - run: ls
@@ -39,7 +39,7 @@ jobs:
           command: |
             cd test
             echo "AUTH0_DOMAIN=$AUTH0_TEST_DOMAIN" >> .env
-            echo "AUTH0_AUDIENCE=$AUTH0_TEST_AUDIENCE" >> .env
+            echo "API_IDENTIFIER=$AUTH0_TEST_AUDIENCE" >> .env
             echo "AUTH0_CLIENT_ID_1=$AUTH0_TEST_CLIENT_ID1" >> .env
             echo "AUTH0_CLIENT_SECRET_1=$AUTH0_TEST_CLIENT_SECRET1" >> .env
             echo "AUTH0_CLIENT_ID_2=$AUTH0_TEST_CLIENT_ID2" >> .env
