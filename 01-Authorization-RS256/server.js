@@ -13,8 +13,8 @@ const app = express();
 
 app.use(express.static('.'));
 
-if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
-  throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file'
+if (!process.env.AUTH0_DOMAIN || !process.env.API_IDENTIFIER) {
+  throw 'Make sure you have AUTH0_DOMAIN, and API_IDENTIFIER in your .env file'
 }
 
 app.use(cors());
@@ -29,7 +29,7 @@ const checkJwt = jwt({
   }),
 
   // Validate the audience and the issuer.
-  audience: process.env.AUTH0_AUDIENCE,
+  audience: process.env.API_IDENTIFIER,
   issuer: `https://${process.env.AUTH0_DOMAIN}/`,
   algorithms: ['RS256']
 });
