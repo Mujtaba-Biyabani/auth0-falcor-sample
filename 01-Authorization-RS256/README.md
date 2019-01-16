@@ -1,5 +1,5 @@
-#
-Auth0 Falcor RS256 Authorization<img src="https://img.shields.io/badge/community-driven-brightgreen.svg"/> <br>
+# Auth0 Falcor RS256 Authorization
+<img src="https://img.shields.io/badge/community-driven-brightgreen.svg"/> <br>
 
 This sample demonstrate how to add authentication to a Falcor app with Auth0.
 
