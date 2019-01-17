@@ -11,13 +11,13 @@ This repo is supported and maintained by Community Developers, not Auth0. For mo
 
 Feel like contributing to this repo? We're glad to hear that! Before you start contributing please visit our [Contributing Guideline](https://github.com/auth0-community/getting-started/blob/master/CONTRIBUTION.md).
 
-Here you can also find the [PR template](https://github.com/auth0-community/auth0-falcor-sample/blob/konrad-readme-unify/PULL_REQUEST_TEMPLATE.md) to fill once creating a PR. It will automatically appear once you open a pull request.
+Here you can also find the [PR template](https://github.com/auth0-community/auth0-falcor-sample/blob/master/PULL_REQUEST_TEMPLATE.md) to fill once creating a PR. It will automatically appear once you open a pull request.
 
 ## Issues Reporting
 
 Spotted a bug or any other kind of issue? We're just humans and we're always waiting for constructive feedback! Check our section on how to [report issues](https://github.com/auth0-community/getting-started/blob/master/CONTRIBUTION.md#issues)!
 
-Here you can also find the [Issue template](https://github.com/auth0-community/auth0-falcor-sample/blob/konrad-readme-unify/ISSUE_TEMPLATE.md) to fill once opening a new issue. It will automatically appear once you create an issue.
+Here you can also find the [Issue template](https://github.com/auth0-community/auth0-falcor-sample/blob/master/ISSUE_TEMPLATE.md) to fill once opening a new issue. It will automatically appear once you create an issue.
 
 ## Repo Community
 
@@ -29,7 +29,7 @@ Feel like PRs and issues are not enough? Want to dive into further discussion ab
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](https://github.com/auth0-community/auth0-falcor-sample/blob/konrad-readme-unify/LICENSE) file for more info.
+This project is licensed under the MIT license. See the [LICENSE](https://github.com/auth0-community/auth0-falcor-sample/blob/master/LICENSE) file for more info.
 
 ## What is Auth0?
 
