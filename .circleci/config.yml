@@ -70,4 +70,3 @@ workflows:
           context: Quickstart API Tests
           requires:
             - checkout
-
