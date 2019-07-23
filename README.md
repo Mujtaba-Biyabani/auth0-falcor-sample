@@ -4,7 +4,7 @@ These samples demonstrate how to add authentication to a Falcor app with Auth0.
 
 # Auth0 Falcor Samples
 
-[![CircleCI](https://img.shields.io/circleci/project/github/auth0-community/auth0-falcor-sample.svg?style=flat-square)](https://circleci.com/gh/auth0-community/auth0-falcor-sample/tree/master)[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 <img src="https://img.shields.io/badge/community-driven-brightgreen.svg"/> <br>
 
 ### Contributors
