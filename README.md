@@ -2,6 +2,10 @@
 
 These samples demonstrate how to add authentication to a Falcor app with Auth0.
 
+### Deprecation notice
+
+This repository has been deprecated.
+
 # Auth0 Falcor Samples
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
